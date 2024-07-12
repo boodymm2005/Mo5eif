@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mo5eif Himself</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 620px 0 150px; /* Top padding 620px, bottom padding 150px */
+            background-image: url('https://i.imgur.com/zFT3sZR.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #fff;
+        }
+        ul {
+            list-style-type: none;
+            padding: 20px;
+        }
+        li {
+            margin-bottom: 50px;
+        }
+        section {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 80px; /* Space between sections */
+            max-width: calc(600px + 70px); /* Wider by 70px */
+            width: 90%;
+            opacity: 0; /* Initially hide sections */
+            transform: translateY(20px); /* Move sections down */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+        }
+        section:last-child {
+            margin-bottom: 0;
+        }
+        .top-box {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners */
+            margin-bottom: 89px; /* Increased space to 89px */
+            max-width: calc(600px + 70px); /* Wider by 70px */
+            width: 90%;
+            margin-top: 30px; /* 30px margin from top */
+        }
+        header {
+            background-color: #f0f0f0; /* Off-white background */
+            width: 100%; /* Full width of the viewport */
+            padding: 20px 0; /* Padding top and bottom */
+            color: #098; /* Black text color */
+            text-align: center; /* Center align text */
+            position: fixed; /* Fixed position to stay at the top */
+            top: 0; /* Align to the top */
+            z-index: 1000; /* Ensure header is above other content */
+            border-radius: 0 0 50% 50%; /* Oval shape with rounded bottom */
+        }
+        header h1 {
+            color: #000; /* Black text color for h1 in header */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Abdelrahman's Website</h1>
+    </header>
+
+    <section class="top-box">
+        <p>"It's funny isn't it how two people have such a different memory of the exact same thing"</p>
+    </section>
+
+    <section id="bio">
+        <h2>About Me</h2>
+        <p>Hello, I am a second-year medical student who is aiming to be a Neurosurgeon. I aspire to help people with everything I can.</p>
+    </section>
+
+    <section id="Movies and TV shows">
+        <h2>movies and TV shows</h2>
+        <ul>
+            <li>Star Wars ROTS</li>
+            <li>Game of Thrones</li>
+        </ul>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Professional Gamer</li>
+            <li>Video Editor specialized in After Effects</li>
+            <li>Most likely the smartest mf you will ever meet in your life</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:boodymm2005@gmail.com">boodymm2005@gmail.com</a></p>
+        <p>Phone: +201021945725</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Abdelrahman Ammar</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle scrolling animations
+        document.addEventListener("DOMContentLoaded", function() {
+            var sections = document.querySelectorAll('section');
+            
+            // Function to check if an element is in viewport
+            function isInViewport(element) {
+                var rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+                );
+            }
+            
+            // Function to handle scroll event
+            function scrollHandler() {
+                sections.forEach(function(section) {
+                    if (isInViewport(section)) {
+                        section.style.opacity = 1;
+                        section.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // Initial call to set visible sections on page load
+            scrollHandler();
+            
+            // Event listener for scroll event
+            window.addEventListener('scroll', scrollHandler);
+        });
+    </script>
+
+</body>
+</html>
